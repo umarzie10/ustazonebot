@@ -35,10 +35,7 @@ def load_config() -> Config:
         social_youtube=os.getenv("SOCIAL_YOUTUBE", ""),
         social_tiktok=os.getenv("SOCIAL_TIKTOK", ""),
         
-        db_url=os.getenv(
-            "DATABASE_URL", 
-            "postgresql+asyncpg://postgres:postgres@localhost:5432/ustazone"
-        ),
+        db_url="sqlite+aiosqlite:///database.db",
         
         redis_host=os.getenv("REDIS_HOST", "localhost"),
         redis_port=int(os.getenv("REDIS_PORT", "6379")),
