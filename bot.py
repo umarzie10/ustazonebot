@@ -17,7 +17,7 @@ dp = Dispatcher()
 def get_main_menu():
     # Saytni ochish uchun WebApp yoki URL ishlatish mumkin. Hozir URL orqali ko'rsatilgan.
     keyboard = [
-        [InlineKeyboardButton(text="🔵 🌐 Saytni ochish", url="https://ustazone.uz")], 
+        [InlineKeyboardButton(text="🔵 🌐 Saytni ochish", url="https://usta-zone-uz.vercel.app/")], 
         [InlineKeyboardButton(text="🟢 ✉️ Xabar yozish", callback_data="write_message")],
         [InlineKeyboardButton(text="🟠 📢 Yangiliklar", callback_data="news")],
         [
