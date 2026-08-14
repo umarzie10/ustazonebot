@@ -29,7 +29,7 @@ async def cq_msg_category(callback: CallbackQuery, state: FSMContext):
     await callback.message.edit_text(
         "✍️ Xabaringizni yuboring.\nOperatorlarimiz sizga tez orada javob berishadi.",
         reply_markup=InlineKeyboardMarkup(inline_keyboard=[
-            [InlineKeyboardButton(text="⬅️ Ortga", callback_data="write_message")]
+            [InlineKeyboardButton(text="⬅️ Ortga", callback_data="write_message", style="primary")]
         ])
     )
     await state.set_state(ContactState.waiting_for_message)
