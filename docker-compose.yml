@@ -32,6 +32,7 @@ services:
       - .env
     volumes:
       - .:/app
+    command: sh -c "alembic upgrade head && python -m bot.main"
 
 volumes:
   postgres_data:
