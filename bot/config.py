@@ -25,6 +25,11 @@ class Config:
     redis_port: int
 
 def load_config() -> Config:
+    db_url_env = os.getenv("DATABASE_URL")
+    # Railway gives postgresql:// but we need postgresql+asyncpg://
+    if db_url_env and db_url_env.startswith("postgresql://"):
+        db_url_env = db_url_env.replace("postgresql://", "postgresql+asyncpg://", 1)
+        
     return Config(
         bot_token=os.getenv("BOT_TOKEN", ""),
         admin_chat_id=int(os.getenv("ADMIN_CHAT_ID", "0")),
@@ -35,7 +40,7 @@ def load_config() -> Config:
         social_youtube=os.getenv("SOCIAL_YOUTUBE", ""),
         social_tiktok=os.getenv("SOCIAL_TIKTOK", ""),
         
-        db_url="sqlite+aiosqlite:///database.db",
+        db_url=db_url_env or "sqlite+aiosqlite:///database.db",
         
         redis_host=os.getenv("REDIS_HOST", "localhost"),
         redis_port=int(os.getenv("REDIS_PORT", "6379")),
