@@ -4,10 +4,7 @@ from bot.config import config
 
 engine = create_async_engine(
     config.db_url,
-    echo=False,
-    pool_pre_ping=True,
-    pool_size=10,
-    max_overflow=20
+    echo=False
 )
 
 async_session = async_sessionmaker(

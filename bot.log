@@ -1,0 +1,872 @@
+2026-08-14 16:12:38,058 - __main__ - INFO - Starting bot...
+2026-08-14 16:13:20,761 - __main__ - INFO - Starting bot...
+2026-08-14 16:13:21,467 - aiogram.dispatcher - INFO - Start polling
+2026-08-14 16:13:21,589 - aiogram.dispatcher - INFO - Run polling for bot @ustazone_uz_bot id=8783456741 - 'UstaZone'
+2026-08-14 16:14:05,540 - bot.middlewares.logging - INFO - Received event: Update
+2026-08-14 16:14:08,477 - bot.middlewares.logging - ERROR - Error handling event: [Errno 11001] getaddrinfo failed
+Traceback (most recent call last):
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\middlewares\logging.py", line 17, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\middlewares\user.py", line 26, in __call__
+    db_user = await get_user(session, user.id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\database\crud\user.py", line 7, in get_user
+    result = await session.execute(select(User).where(User.id == user_id))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3278, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3302, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 932, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\asyncpg\connection.py", line 2329, in connect
+    return await connect_utils._connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\asyncpg\connect_utils.py", line 1017, in _connect
+    raise last_error or exceptions.TargetServerAttributeNotMatched(
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\asyncpg\connect_utils.py", line 991, in _connect
+    conn = await _connect_addr(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\asyncpg\connect_utils.py", line 828, in _connect_addr
+    return await __connect_addr(params, True, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\asyncpg\connect_utils.py", line 873, in __connect_addr
+    tr, pr = await connector
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\asyncpg\connect_utils.py", line 744, in _create_ssl_connection
+    tr, pr = await loop.create_connection(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 1083, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 1466, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 905, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 978, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+2026-08-14 16:14:08,603 - bot.handlers.errors - ERROR - Update: update_id=300486110 message=Message(message_id=833, date=datetime.datetime(2026, 8, 14, 11, 14, 6, tzinfo=TzInfo(UTC)), chat=Chat(id=6265790648, type='private', title=None, username='umar_1020', first_name='Umar', last_name=None, is_forum=None, is_direct_messages=None, accent_color_id=None, active_usernames=None, available_reactions=None, background_custom_emoji_id=None, bio=None, birthdate=None, business_intro=None, business_location=None, business_opening_hours=None, can_set_sticker_set=None, custom_emoji_sticker_set_name=None, description=None, emoji_status_custom_emoji_id=None, emoji_status_expiration_date=None, has_aggressive_anti_spam_enabled=None, has_hidden_members=None, has_private_forwards=None, has_protected_content=None, has_restricted_voice_and_video_messages=None, has_visible_history=None, invite_link=None, join_by_request=None, join_to_send_messages=None, linked_chat_id=None, location=None, message_auto_delete_time=None, permissions=None, personal_chat=None, photo=None, pinned_message=None, profile_accent_color_id=None, profile_background_custom_emoji_id=None, slow_mode_delay=None, sticker_set_name=None, unrestrict_boost_count=None), message_thread_id=None, direct_messages_topic=None, from_user=User(id=6265790648, is_bot=False, first_name='Umar', last_name=None, username='umar_1020', language_code='ru', is_premium=None, added_to_attachment_menu=None, can_join_groups=None, can_read_all_group_messages=None, supports_guest_queries=None, supports_inline_queries=None, can_connect_to_business=None, has_main_web_app=None, has_topics_enabled=None, allows_users_to_create_topics=None, can_manage_bots=None, supports_join_request_queries=None), sender_chat=None, sender_boost_count=None, sender_business_bot=None, sender_tag=None, guest_query_id=None, business_connection_id=None, forward_origin=None, is_topic_message=None, is_automatic_forward=None, reply_to_message=None, external_reply=None, quote=None, reply_to_story=None, reply_to_checklist_task_id=None, reply_to_poll_option_id=None, via_bot=None, guest_bot_caller_user=None, guest_bot_caller_chat=None, edit_date=None, has_protected_content=None, is_from_offline=None, is_paid_post=None, media_group_id=None, author_signature=None, paid_star_count=None, text='/start', entities=[MessageEntity(type='bot_command', offset=0, length=6, url=None, user=None, language=None, custom_emoji_id=None, unix_time=None, date_time_format=None)], link_preview_options=None, suggested_post_info=None, effect_id=None, animation=None, audio=None, document=None, live_photo=None, paid_media=None, photo=None, sticker=None, story=None, video=None, video_note=None, voice=None, caption=None, caption_entities=None, show_caption_above_media=None, has_media_spoiler=None, checklist=None, contact=None, dice=None, game=None, poll=None, venue=None, location=None, new_chat_members=None, left_chat_member=None, chat_owner_left=None, chat_owner_changed=None, new_chat_title=None, new_chat_photo=None, delete_chat_photo=None, group_chat_created=None, supergroup_chat_created=None, channel_chat_created=None, message_auto_delete_timer_changed=None, migrate_to_chat_id=None, migrate_from_chat_id=None, pinned_message=None, invoice=None, successful_payment=None, refunded_payment=None, users_shared=None, chat_shared=None, gift=None, unique_gift=None, gift_upgrade_sent=None, connected_website=None, write_access_allowed=None, passport_data=None, proximity_alert_triggered=None, boost_added=None, chat_background_set=None, checklist_tasks_done=None, checklist_tasks_added=None, direct_message_price_changed=None, forum_topic_created=None, forum_topic_edited=None, forum_topic_closed=None, forum_topic_reopened=None, general_forum_topic_hidden=None, general_forum_topic_unhidden=None, giveaway_created=None, giveaway=None, giveaway_winners=None, giveaway_completed=None, managed_bot_created=None, paid_message_price_changed=None, poll_option_added=None, poll_option_deleted=None, suggested_post_approved=None, suggested_post_approval_failed=None, suggested_post_declined=None, suggested_post_paid=None, suggested_post_refunded=None, video_chat_scheduled=None, video_chat_started=None, video_chat_ended=None, video_chat_participants_invited=None, web_app_data=None, reply_markup=None, rich_message=None, receiver_user=None, ephemeral_message_id=None, community_chat_added=None, community_chat_removed=None, forward_date=None, forward_from=None, forward_from_chat=None, forward_from_message_id=None, forward_sender_name=None, forward_signature=None, user_shared=None) edited_message=None channel_post=None edited_channel_post=None business_connection=None business_message=None edited_business_message=None deleted_business_messages=None guest_message=None message_reaction=None message_reaction_count=None inline_query=None chosen_inline_result=None callback_query=None shipping_query=None pre_checkout_query=None purchased_paid_media=None poll=None poll_answer=None my_chat_member=None chat_member=None chat_join_request=None chat_boost=None removed_chat_boost=None managed_bot=None subscription=None
+Exception: [Errno 11001] getaddrinfo failed
+Traceback (most recent call last):
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\middlewares\logging.py", line 17, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\middlewares\user.py", line 26, in __call__
+    db_user = await get_user(session, user.id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\database\crud\user.py", line 7, in get_user
+    result = await session.execute(select(User).where(User.id == user_id))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3278, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3302, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 932, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\asyncpg\connection.py", line 2329, in connect
+    return await connect_utils._connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\asyncpg\connect_utils.py", line 1017, in _connect
+    raise last_error or exceptions.TargetServerAttributeNotMatched(
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\asyncpg\connect_utils.py", line 991, in _connect
+    conn = await _connect_addr(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\asyncpg\connect_utils.py", line 828, in _connect_addr
+    return await __connect_addr(params, True, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\asyncpg\connect_utils.py", line 873, in __connect_addr
+    tr, pr = await connector
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\venv\Lib\site-packages\asyncpg\connect_utils.py", line 744, in _create_ssl_connection
+    tr, pr = await loop.create_connection(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 1083, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 1466, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 905, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 978, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+2026-08-14 16:14:08,622 - aiogram.event - INFO - Update id=300486110 is handled. Duration 3079 ms by bot id=8783456741
+2026-08-14 16:16:09,921 - __main__ - INFO - Starting bot...
+2026-08-14 16:16:10,484 - aiogram.dispatcher - INFO - Start polling
+2026-08-14 16:16:10,610 - aiogram.dispatcher - INFO - Run polling for bot @ustazone_uz_bot id=8783456741 - 'UstaZone'
+2026-08-14 16:33:23,579 - __main__ - INFO - Starting bot...
+2026-08-14 16:33:24,236 - aiogram.dispatcher - INFO - Start polling
+2026-08-14 16:33:24,417 - aiogram.dispatcher - INFO - Run polling for bot @ustazone_uz_bot id=8783456741 - 'UstaZone'
+2026-08-14 16:34:18,111 - __main__ - INFO - Starting bot...
+2026-08-14 16:34:18,803 - aiogram.dispatcher - INFO - Start polling
+2026-08-14 16:34:18,932 - aiogram.dispatcher - INFO - Run polling for bot @ustazone_uz_bot id=8783456741 - 'UstaZone'
+2026-08-14 16:34:28,106 - bot.middlewares.logging - INFO - Received event: Update
+2026-08-14 16:34:28,224 - bot.middlewares.logging - ERROR - Error handling event: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id, users.full_name, users.username, users.created_at 
+FROM users 
+WHERE users.id = ?]
+[parameters: (6265790648,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 147, in execute
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 298, in _handle_exception
+    raise error
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 129, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\cursor.py", line 40, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\cursor.py", line 32, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\core.py", line 63, in _connection_worker_thread
+    result = function()
+             ^^^^^^^^^^
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\middlewares\logging.py", line 17, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\middlewares\user.py", line 26, in __call__
+    db_user = await get_user(session, user.id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\database\crud\user.py", line 7, in get_user
+    result = await session.execute(select(User).where(User.id == user_id))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2236, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 147, in execute
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 298, in _handle_exception
+    raise error
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 129, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\cursor.py", line 40, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\cursor.py", line 32, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\core.py", line 63, in _connection_worker_thread
+    result = function()
+             ^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id, users.full_name, users.username, users.created_at 
+FROM users 
+WHERE users.id = ?]
+[parameters: (6265790648,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-14 16:34:28,339 - bot.handlers.errors - ERROR - Update: update_id=300486118 message=Message(message_id=841, date=datetime.datetime(2026, 8, 14, 11, 34, 29, tzinfo=TzInfo(UTC)), chat=Chat(id=6265790648, type='private', title=None, username='umar_1020', first_name='Umar', last_name=None, is_forum=None, accent_color_id=None, active_usernames=None, available_reactions=None, background_custom_emoji_id=None, bio=None, birthdate=None, business_intro=None, business_location=None, business_opening_hours=None, can_set_sticker_set=None, custom_emoji_sticker_set_name=None, description=None, emoji_status_custom_emoji_id=None, emoji_status_expiration_date=None, has_aggressive_anti_spam_enabled=None, has_hidden_members=None, has_private_forwards=None, has_protected_content=None, has_restricted_voice_and_video_messages=None, has_visible_history=None, invite_link=None, join_by_request=None, join_to_send_messages=None, linked_chat_id=None, location=None, message_auto_delete_time=None, permissions=None, personal_chat=None, photo=None, pinned_message=None, profile_accent_color_id=None, profile_background_custom_emoji_id=None, slow_mode_delay=None, sticker_set_name=None, unrestrict_boost_count=None), message_thread_id=None, from_user=User(id=6265790648, is_bot=False, first_name='Umar', last_name=None, username='umar_1020', language_code='ru', is_premium=None, added_to_attachment_menu=None, can_join_groups=None, can_read_all_group_messages=None, supports_inline_queries=None, can_connect_to_business=None), sender_chat=None, sender_boost_count=None, sender_business_bot=None, business_connection_id=None, forward_origin=None, is_topic_message=None, is_automatic_forward=None, reply_to_message=None, external_reply=None, quote=None, reply_to_story=None, via_bot=None, edit_date=None, has_protected_content=None, is_from_offline=None, media_group_id=None, author_signature=None, text='/start', entities=[MessageEntity(type='bot_command', offset=0, length=6, url=None, user=None, language=None, custom_emoji_id=None)], link_preview_options=None, effect_id=None, animation=None, audio=None, document=None, paid_media=None, photo=None, sticker=None, story=None, video=None, video_note=None, voice=None, caption=None, caption_entities=None, show_caption_above_media=None, has_media_spoiler=None, contact=None, dice=None, game=None, poll=None, venue=None, location=None, new_chat_members=None, left_chat_member=None, new_chat_title=None, new_chat_photo=None, delete_chat_photo=None, group_chat_created=None, supergroup_chat_created=None, channel_chat_created=None, message_auto_delete_timer_changed=None, migrate_to_chat_id=None, migrate_from_chat_id=None, pinned_message=None, invoice=None, successful_payment=None, refunded_payment=None, users_shared=None, chat_shared=None, connected_website=None, write_access_allowed=None, passport_data=None, proximity_alert_triggered=None, boost_added=None, chat_background_set=None, forum_topic_created=None, forum_topic_edited=None, forum_topic_closed=None, forum_topic_reopened=None, general_forum_topic_hidden=None, general_forum_topic_unhidden=None, giveaway_created=None, giveaway=None, giveaway_winners=None, giveaway_completed=None, video_chat_scheduled=None, video_chat_started=None, video_chat_ended=None, video_chat_participants_invited=None, web_app_data=None, reply_markup=None, forward_date=None, forward_from=None, forward_from_chat=None, forward_from_message_id=None, forward_sender_name=None, forward_signature=None, user_shared=None) edited_message=None channel_post=None edited_channel_post=None business_connection=None business_message=None edited_business_message=None deleted_business_messages=None message_reaction=None message_reaction_count=None inline_query=None chosen_inline_result=None callback_query=None shipping_query=None pre_checkout_query=None poll=None poll_answer=None my_chat_member=None chat_member=None chat_join_request=None chat_boost=None removed_chat_boost=None
+Exception: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id, users.full_name, users.username, users.created_at 
+FROM users 
+WHERE users.id = ?]
+[parameters: (6265790648,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 147, in execute
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 298, in _handle_exception
+    raise error
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 129, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\cursor.py", line 40, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\cursor.py", line 32, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\core.py", line 63, in _connection_worker_thread
+    result = function()
+             ^^^^^^^^^^
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\middlewares\logging.py", line 17, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\middlewares\user.py", line 26, in __call__
+    db_user = await get_user(session, user.id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\database\crud\user.py", line 7, in get_user
+    result = await session.execute(select(User).where(User.id == user_id))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2236, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 147, in execute
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 298, in _handle_exception
+    raise error
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 129, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\cursor.py", line 40, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\cursor.py", line 32, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\core.py", line 63, in _connection_worker_thread
+    result = function()
+             ^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id, users.full_name, users.username, users.created_at 
+FROM users 
+WHERE users.id = ?]
+[parameters: (6265790648,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-14 16:34:28,381 - aiogram.event - INFO - Update id=300486118 is handled. Duration 281 ms by bot id=8783456741
+2026-08-14 16:35:40,552 - bot.middlewares.logging - INFO - Received event: Update
+2026-08-14 16:35:40,616 - bot.middlewares.logging - ERROR - Error handling event: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id, users.full_name, users.username, users.created_at 
+FROM users 
+WHERE users.id = ?]
+[parameters: (6265790648,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 147, in execute
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 298, in _handle_exception
+    raise error
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 129, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\cursor.py", line 40, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\cursor.py", line 32, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\core.py", line 63, in _connection_worker_thread
+    result = function()
+             ^^^^^^^^^^
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\middlewares\logging.py", line 17, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\middlewares\user.py", line 26, in __call__
+    db_user = await get_user(session, user.id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\database\crud\user.py", line 7, in get_user
+    result = await session.execute(select(User).where(User.id == user_id))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2236, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 147, in execute
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 298, in _handle_exception
+    raise error
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 129, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\cursor.py", line 40, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\cursor.py", line 32, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\core.py", line 63, in _connection_worker_thread
+    result = function()
+             ^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id, users.full_name, users.username, users.created_at 
+FROM users 
+WHERE users.id = ?]
+[parameters: (6265790648,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-14 16:35:40,654 - bot.handlers.errors - ERROR - Update: update_id=300486119 message=Message(message_id=842, date=datetime.datetime(2026, 8, 14, 11, 35, 41, tzinfo=TzInfo(UTC)), chat=Chat(id=6265790648, type='private', title=None, username='umar_1020', first_name='Umar', last_name=None, is_forum=None, accent_color_id=None, active_usernames=None, available_reactions=None, background_custom_emoji_id=None, bio=None, birthdate=None, business_intro=None, business_location=None, business_opening_hours=None, can_set_sticker_set=None, custom_emoji_sticker_set_name=None, description=None, emoji_status_custom_emoji_id=None, emoji_status_expiration_date=None, has_aggressive_anti_spam_enabled=None, has_hidden_members=None, has_private_forwards=None, has_protected_content=None, has_restricted_voice_and_video_messages=None, has_visible_history=None, invite_link=None, join_by_request=None, join_to_send_messages=None, linked_chat_id=None, location=None, message_auto_delete_time=None, permissions=None, personal_chat=None, photo=None, pinned_message=None, profile_accent_color_id=None, profile_background_custom_emoji_id=None, slow_mode_delay=None, sticker_set_name=None, unrestrict_boost_count=None), message_thread_id=None, from_user=User(id=6265790648, is_bot=False, first_name='Umar', last_name=None, username='umar_1020', language_code='ru', is_premium=None, added_to_attachment_menu=None, can_join_groups=None, can_read_all_group_messages=None, supports_inline_queries=None, can_connect_to_business=None), sender_chat=None, sender_boost_count=None, sender_business_bot=None, business_connection_id=None, forward_origin=None, is_topic_message=None, is_automatic_forward=None, reply_to_message=None, external_reply=None, quote=None, reply_to_story=None, via_bot=None, edit_date=None, has_protected_content=None, is_from_offline=None, media_group_id=None, author_signature=None, text='/start', entities=[MessageEntity(type='bot_command', offset=0, length=6, url=None, user=None, language=None, custom_emoji_id=None)], link_preview_options=None, effect_id=None, animation=None, audio=None, document=None, paid_media=None, photo=None, sticker=None, story=None, video=None, video_note=None, voice=None, caption=None, caption_entities=None, show_caption_above_media=None, has_media_spoiler=None, contact=None, dice=None, game=None, poll=None, venue=None, location=None, new_chat_members=None, left_chat_member=None, new_chat_title=None, new_chat_photo=None, delete_chat_photo=None, group_chat_created=None, supergroup_chat_created=None, channel_chat_created=None, message_auto_delete_timer_changed=None, migrate_to_chat_id=None, migrate_from_chat_id=None, pinned_message=None, invoice=None, successful_payment=None, refunded_payment=None, users_shared=None, chat_shared=None, connected_website=None, write_access_allowed=None, passport_data=None, proximity_alert_triggered=None, boost_added=None, chat_background_set=None, forum_topic_created=None, forum_topic_edited=None, forum_topic_closed=None, forum_topic_reopened=None, general_forum_topic_hidden=None, general_forum_topic_unhidden=None, giveaway_created=None, giveaway=None, giveaway_winners=None, giveaway_completed=None, video_chat_scheduled=None, video_chat_started=None, video_chat_ended=None, video_chat_participants_invited=None, web_app_data=None, reply_markup=None, forward_date=None, forward_from=None, forward_from_chat=None, forward_from_message_id=None, forward_sender_name=None, forward_signature=None, user_shared=None) edited_message=None channel_post=None edited_channel_post=None business_connection=None business_message=None edited_business_message=None deleted_business_messages=None message_reaction=None message_reaction_count=None inline_query=None chosen_inline_result=None callback_query=None shipping_query=None pre_checkout_query=None poll=None poll_answer=None my_chat_member=None chat_member=None chat_join_request=None chat_boost=None removed_chat_boost=None
+Exception: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id, users.full_name, users.username, users.created_at 
+FROM users 
+WHERE users.id = ?]
+[parameters: (6265790648,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 147, in execute
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 298, in _handle_exception
+    raise error
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 129, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\cursor.py", line 40, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\cursor.py", line 32, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\core.py", line 63, in _connection_worker_thread
+    result = function()
+             ^^^^^^^^^^
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\middlewares\logging.py", line 17, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\middlewares\user.py", line 26, in __call__
+    db_user = await get_user(session, user.id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\database\crud\user.py", line 7, in get_user
+    result = await session.execute(select(User).where(User.id == user_id))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2236, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 147, in execute
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 298, in _handle_exception
+    raise error
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 129, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\cursor.py", line 40, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\cursor.py", line 32, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiosqlite\core.py", line 63, in _connection_worker_thread
+    result = function()
+             ^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id, users.full_name, users.username, users.created_at 
+FROM users 
+WHERE users.id = ?]
+[parameters: (6265790648,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-14 16:35:40,728 - aiogram.event - INFO - Update id=300486119 is handled. Duration 172 ms by bot id=8783456741
+2026-08-14 16:37:42,351 - bot.middlewares.logging - INFO - Received event: Update
+2026-08-14 16:37:42,407 - bot.middlewares.logging - ERROR - Error handling event: 'MemoryStorage' object has no attribute 'redis'
+Traceback (most recent call last):
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\middlewares\logging.py", line 17, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\middlewares\user.py", line 37, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 170, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 170, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\middlewares\throttling.py", line 22, in __call__
+    redis = self.storage.redis
+            ^^^^^^^^^^^^^^^^^^
+AttributeError: 'MemoryStorage' object has no attribute 'redis'
+2026-08-14 16:37:42,420 - bot.handlers.errors - ERROR - Update: update_id=300486120 message=Message(message_id=843, date=datetime.datetime(2026, 8, 14, 11, 37, 43, tzinfo=TzInfo(UTC)), chat=Chat(id=6265790648, type='private', title=None, username='umar_1020', first_name='Umar', last_name=None, is_forum=None, accent_color_id=None, active_usernames=None, available_reactions=None, background_custom_emoji_id=None, bio=None, birthdate=None, business_intro=None, business_location=None, business_opening_hours=None, can_set_sticker_set=None, custom_emoji_sticker_set_name=None, description=None, emoji_status_custom_emoji_id=None, emoji_status_expiration_date=None, has_aggressive_anti_spam_enabled=None, has_hidden_members=None, has_private_forwards=None, has_protected_content=None, has_restricted_voice_and_video_messages=None, has_visible_history=None, invite_link=None, join_by_request=None, join_to_send_messages=None, linked_chat_id=None, location=None, message_auto_delete_time=None, permissions=None, personal_chat=None, photo=None, pinned_message=None, profile_accent_color_id=None, profile_background_custom_emoji_id=None, slow_mode_delay=None, sticker_set_name=None, unrestrict_boost_count=None), message_thread_id=None, from_user=User(id=6265790648, is_bot=False, first_name='Umar', last_name=None, username='umar_1020', language_code='ru', is_premium=None, added_to_attachment_menu=None, can_join_groups=None, can_read_all_group_messages=None, supports_inline_queries=None, can_connect_to_business=None), sender_chat=None, sender_boost_count=None, sender_business_bot=None, business_connection_id=None, forward_origin=None, is_topic_message=None, is_automatic_forward=None, reply_to_message=None, external_reply=None, quote=None, reply_to_story=None, via_bot=None, edit_date=None, has_protected_content=None, is_from_offline=None, media_group_id=None, author_signature=None, text='/start', entities=[MessageEntity(type='bot_command', offset=0, length=6, url=None, user=None, language=None, custom_emoji_id=None)], link_preview_options=None, effect_id=None, animation=None, audio=None, document=None, paid_media=None, photo=None, sticker=None, story=None, video=None, video_note=None, voice=None, caption=None, caption_entities=None, show_caption_above_media=None, has_media_spoiler=None, contact=None, dice=None, game=None, poll=None, venue=None, location=None, new_chat_members=None, left_chat_member=None, new_chat_title=None, new_chat_photo=None, delete_chat_photo=None, group_chat_created=None, supergroup_chat_created=None, channel_chat_created=None, message_auto_delete_timer_changed=None, migrate_to_chat_id=None, migrate_from_chat_id=None, pinned_message=None, invoice=None, successful_payment=None, refunded_payment=None, users_shared=None, chat_shared=None, connected_website=None, write_access_allowed=None, passport_data=None, proximity_alert_triggered=None, boost_added=None, chat_background_set=None, forum_topic_created=None, forum_topic_edited=None, forum_topic_closed=None, forum_topic_reopened=None, general_forum_topic_hidden=None, general_forum_topic_unhidden=None, giveaway_created=None, giveaway=None, giveaway_winners=None, giveaway_completed=None, video_chat_scheduled=None, video_chat_started=None, video_chat_ended=None, video_chat_participants_invited=None, web_app_data=None, reply_markup=None, forward_date=None, forward_from=None, forward_from_chat=None, forward_from_message_id=None, forward_sender_name=None, forward_signature=None, user_shared=None) edited_message=None channel_post=None edited_channel_post=None business_connection=None business_message=None edited_business_message=None deleted_business_messages=None message_reaction=None message_reaction_count=None inline_query=None chosen_inline_result=None callback_query=None shipping_query=None pre_checkout_query=None poll=None poll_answer=None my_chat_member=None chat_member=None chat_join_request=None chat_boost=None removed_chat_boost=None
+Exception: 'MemoryStorage' object has no attribute 'redis'
+Traceback (most recent call last):
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\middlewares\logging.py", line 17, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\middlewares\user.py", line 37, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 170, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 170, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\umare\OneDrive\Desktop\Новая папка (3)\bot\middlewares\throttling.py", line 22, in __call__
+    redis = self.storage.redis
+            ^^^^^^^^^^^^^^^^^^
+AttributeError: 'MemoryStorage' object has no attribute 'redis'
+2026-08-14 16:37:42,426 - aiogram.event - INFO - Update id=300486120 is handled. Duration 61 ms by bot id=8783456741
+2026-08-14 16:38:50,736 - aiogram.dispatcher - INFO - Polling stopped
+2026-08-14 16:38:51,001 - aiogram.dispatcher - INFO - Polling stopped for bot @ustazone_uz_bot id=8783456741 - 'UstaZone'
+2026-08-14 16:38:51,001 - __main__ - INFO - Bot stopped.
