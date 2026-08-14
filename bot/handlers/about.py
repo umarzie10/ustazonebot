@@ -7,16 +7,13 @@ router = Router()
 @router.callback_query(F.data == "about")
 async def cq_about(callback: CallbackQuery):
     text = (
-        "💈 <b>BarberTop</b>\n\n"
-        "BarberTop —\n"
-        "O'zbekistondagi zamonaviy\n"
-        "barbershop bron qilish platformasi.\n\n"
-        "Sayt orqali:\n"
-        "• Barber topish\n"
-        "• Online bron qilish\n"
-        "• Qulay to'lov\n"
-        "• Reyting\n"
-        "• Sharhlar\n\n"
-        "<i>Version: 1.0.0</i>"
+        "ℹ️ <b>UstaZone haqida</b>\n\n"
+        "UstaZone — mijozlarni ishonchli va malakali ustalar bilan bog‘laydigan xizmat platformasi.\n"
+        "Bu yerda siz:\n"
+        "• 🔎 kerakli ustani topishingiz\n"
+        "• 📋 buyurtma berishingiz\n"
+        "• ⭐ usta haqida fikr va reytinglarni ko‘rishingiz\n"
+        "• 💬 usta bilan bog‘lanishingiz mumkin.\n\n"
+        "🚀 UstaZone — kerakli usta, kerakli vaqtda."
     )
     await callback.message.edit_text(text, reply_markup=get_about_menu())

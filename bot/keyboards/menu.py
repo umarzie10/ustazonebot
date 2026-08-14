@@ -6,11 +6,11 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 def get_main_menu() -> InlineKeyboardMarkup:
     keyboard = [
-        [InlineKeyboardButton(text="🌐 Saytni ochish", web_app=WebAppInfo(url=config.webapp_url), style="primary")],
-        [InlineKeyboardButton(text="✉️ Xabar yozish", callback_data="write_message", style="primary")],
-        [InlineKeyboardButton(text="📰 Ustazone Yangiliklari", url="https://t.me/ustazone_uz", style="primary")],
+        [InlineKeyboardButton(text="🌐 Saytni ochish", url=config.webapp_url, style="primary")],
+        [InlineKeyboardButton(text="✉️ Xabar yozish", callback_data="write_message", style="success")],
+        [InlineKeyboardButton(text="📢 Yangiliklar", url="https://t.me/ustazone_uz", style="primary")],
         [
-            InlineKeyboardButton(text="❓ FAQ", callback_data="faq_menu", style="primary"),
+            InlineKeyboardButton(text="❓ Yordam", callback_data="faq_menu", style="primary"),
             InlineKeyboardButton(text="ℹ️ Haqida", callback_data="about", style="primary")
         ],
         [InlineKeyboardButton(text="📱 Ijtimoiy tarmoqlar", callback_data="socials", style="primary")]
@@ -18,30 +18,28 @@ def get_main_menu() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 def get_socials_menu() -> InlineKeyboardMarkup:
+    builder = InlineKeyboardBuilder()
+    builder.row(InlineKeyboardButton(text="✈️ Telegram", url="https://t.me/ustazone_uz", style="primary"))
+    if config.social_youtube:
+        builder.row(InlineKeyboardButton(text="▶️ YouTube", url=config.social_youtube, style="primary"))
+    if config.social_tiktok:
+        builder.row(InlineKeyboardButton(text="🎵 TikTok", url=config.social_tiktok, style="primary"))
+    builder.row(InlineKeyboardButton(text="🔙 Orqaga", callback_data="main_menu", style="primary"))
+    return builder.as_markup()
+
+def get_yordam_menu() -> InlineKeyboardMarkup:
     keyboard = [
-        [
-            InlineKeyboardButton(text="Telegram", url=config.social_telegram, style="primary")
-        ],
-        [
-            InlineKeyboardButton(text="YouTube", url=config.social_youtube, style="primary"),
-            InlineKeyboardButton(text="TikTok", url=config.social_tiktok, style="primary")
-        ],
-        [InlineKeyboardButton(text="Website", url=config.webapp_url, style="primary")],
-        [InlineKeyboardButton(text="⬅️ Ortga", callback_data="main_menu", style="primary")]
+        [InlineKeyboardButton(text="🔎 Usta qanday topiladi?", callback_data="faq_find", style="primary")],
+        [InlineKeyboardButton(text="📋 Buyurtma qanday beriladi?", callback_data="faq_order", style="primary")],
+        [InlineKeyboardButton(text="💳 To‘lov qanday ishlaydi?", callback_data="faq_payment", style="primary")],
+        [InlineKeyboardButton(text="⭐ Reyting qanday beriladi?", callback_data="faq_rating", style="primary")],
+        [InlineKeyboardButton(text="🔙 Orqaga", callback_data="main_menu", style="primary")]
     ]
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
-def get_faq_menu(faqs: Sequence[Faq]) -> InlineKeyboardMarkup:
-    builder = InlineKeyboardBuilder()
-    for faq in faqs:
-        builder.button(text=faq.question, callback_data=f"faq_item_{faq.id}", style="primary")
-    builder.adjust(1)
-    builder.row(InlineKeyboardButton(text="⬅️ Ortga", callback_data="main_menu", style="primary"))
-    return builder.as_markup()
-
-def get_faq_back_menu() -> InlineKeyboardMarkup:
+def get_yordam_back_menu() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="⬅️ Ortga", callback_data="faq_menu", style="primary")]
+        [InlineKeyboardButton(text="🔙 Orqaga", callback_data="faq_menu", style="primary")]
     ])
 
 def get_news_pagination(page: int, total: int) -> InlineKeyboardMarkup:
@@ -54,13 +52,13 @@ def get_news_pagination(page: int, total: int) -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
     if buttons:
         builder.row(*buttons)
-    builder.row(InlineKeyboardButton(text="⬅️ Ortga", callback_data="main_menu", style="primary"))
+    builder.row(InlineKeyboardButton(text="🔙 Orqaga", callback_data="main_menu", style="primary"))
     return builder.as_markup()
 
 def get_about_menu() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="🌐 Saytni ochish", web_app=WebAppInfo(url=config.webapp_url), style="primary")],
-        [InlineKeyboardButton(text="⬅️ Ortga", callback_data="main_menu", style="primary")]
+        [InlineKeyboardButton(text="🌐 Saytni ochish", url=config.webapp_url, style="primary")],
+        [InlineKeyboardButton(text="🔙 Orqaga", callback_data="main_menu", style="primary")]
     ])
 
 def get_admin_menu() -> InlineKeyboardMarkup:
@@ -75,11 +73,8 @@ def get_admin_menu() -> InlineKeyboardMarkup:
     ]
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
-def get_message_categories_menu() -> InlineKeyboardMarkup:
-    keyboard = [
-        [InlineKeyboardButton(text="💬 Admin bilan bog'lanish", callback_data="msg_cat_admin", style="primary")],
-        [InlineKeyboardButton(text="🛠 Muammo haqida xabar", callback_data="msg_cat_problem", style="primary")],
-        [InlineKeyboardButton(text="💡 Taklif yuborish", callback_data="msg_cat_suggestion", style="primary")],
-        [InlineKeyboardButton(text="🏠 Bosh menyu", callback_data="main_menu", style="primary")]
-    ]
-    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+def get_contact_operator_menu() -> InlineKeyboardMarkup:
+    return InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text="💬 Operatorga yozish", callback_data="msg_cat_admin", style="primary")],
+        [InlineKeyboardButton(text="🔙 Orqaga", callback_data="main_menu", style="primary")]
+    ])

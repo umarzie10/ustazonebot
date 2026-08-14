@@ -6,7 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from bot.config import config
 from bot.database.crud.message import save_message
-from bot.keyboards.menu import get_main_menu, get_message_categories_menu
+from bot.keyboards.menu import get_main_menu, get_contact_operator_menu
 
 router = Router()
 
@@ -17,8 +17,8 @@ class ContactState(StatesGroup):
 async def cq_write_message(callback: CallbackQuery, state: FSMContext):
     await state.clear()
     await callback.message.edit_text(
-        "Qaysi bo'limga xabar yozmoqchisiz? Kategoriyani tanlang:",
-        reply_markup=get_message_categories_menu()
+        "💬 Biz bilan bog‘lanish\nSavolingiz yoki taklifingizni yozib yuboring.\nOperatorimiz imkon qadar tez javob beradi.\n👇 Quyidagi tugmani bosing:",
+        reply_markup=get_contact_operator_menu()
     )
 
 @router.callback_query(F.data.startswith("msg_cat_"))

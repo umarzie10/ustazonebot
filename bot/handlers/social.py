@@ -6,5 +6,5 @@ router = Router()
 
 @router.callback_query(F.data == "socials")
 async def cq_socials(callback: CallbackQuery):
-    text = "📱 <b>Ijtimoiy tarmoqlar</b>\n\nBizning ijtimoiy tarmoqlarimizga obuna bo'ling:"
+    text = "📱 <b>Bizni ijtimoiy tarmoqlarda kuzating</b>\n\nUstaZone yangiliklari, foydali maslahatlar va yangi imkoniyatlardan xabardor bo‘ling."
     await callback.message.edit_text(text, reply_markup=get_socials_menu())

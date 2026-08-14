@@ -17,14 +17,14 @@ dp = Dispatcher()
 def get_main_menu():
     # Saytni ochish uchun WebApp yoki URL ishlatish mumkin. Hozir URL orqali ko'rsatilgan.
     keyboard = [
-        [InlineKeyboardButton(text="🔵 🌐 Saytni ochish", url="https://usta-zone-uz.vercel.app/", style="primary")], 
-        [InlineKeyboardButton(text="🟢 ✉️ Xabar yozish", callback_data="write_message", style="primary")],
-        [InlineKeyboardButton(text="🟠 📢 Yangiliklar", callback_data="news", style="primary")],
+        [InlineKeyboardButton(text="🌐 Saytni ochish", url="https://usta-zone-uz.vercel.app/", style="primary")], 
+        [InlineKeyboardButton(text="✉️ Xabar yozish", callback_data="write_message", style="success")],
+        [InlineKeyboardButton(text="📢 Yangiliklar", url="https://t.me/ustazone_uz", style="primary")],
         [
-            InlineKeyboardButton(text="🟡 ❓ FAQ", callback_data="faq", style="primary"),
-            InlineKeyboardButton(text="🟣 ℹ️ Haqida", callback_data="about", style="primary")
+            InlineKeyboardButton(text="❓ Yordam", callback_data="faq_menu", style="primary"),
+            InlineKeyboardButton(text="ℹ️ Haqida", callback_data="about", style="primary")
         ],
-        [InlineKeyboardButton(text="🔴 📱 Ijtimoiy tarmoqlar", callback_data="socials", style="primary")]
+        [InlineKeyboardButton(text="📱 Ijtimoiy tarmoqlar", callback_data="socials", style="primary")]
     ]
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
