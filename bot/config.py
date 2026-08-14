@@ -37,7 +37,7 @@ def load_config() -> Config:
         
         db_url=os.getenv(
             "DATABASE_URL", 
-            "postgresql+asyncpg://postgres:postgres@localhost:5432/barbertop"
+            "postgresql+asyncpg://postgres:postgres@localhost:5432/ustazone"
         ),
         
         redis_host=os.getenv("REDIS_HOST", "localhost"),

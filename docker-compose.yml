@@ -3,12 +3,12 @@ version: '3.8'
 services:
   db:
     image: postgres:15-alpine
-    container_name: barbertop_db
+    container_name: ustazone_db
     restart: always
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
-      POSTGRES_DB: ${POSTGRES_DB:-barbertop}
+      POSTGRES_DB: ${POSTGRES_DB:-ustazone}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
@@ -16,14 +16,14 @@ services:
 
   redis:
     image: redis:7-alpine
-    container_name: barbertop_redis
+    container_name: ustazone_redis
     restart: always
     ports:
       - "6379:6379"
 
   bot:
     build: .
-    container_name: barbertop_bot
+    container_name: ustazone_bot
     restart: always
     depends_on:
       - db

@@ -1,6 +1,6 @@
-# BarberTop Telegram Bot
+# UstaZone Telegram Bot
 
-Ushbu loyiha BarberTop uchun ishlab chiqarishga tayyor (production-ready) bo'lgan, enterprise arxitekturadagi Telegram bot hisoblanadi.
+Ushbu loyiha UstaZone uchun ishlab chiqarishga tayyor (production-ready) bo'lgan, enterprise arxitekturadagi Telegram bot hisoblanadi.
 
 ## Texnologiyalar
 
@@ -15,7 +15,7 @@ Ushbu loyiha BarberTop uchun ishlab chiqarishga tayyor (production-ready) bo'lga
 ## Papkalar tuzilmasi
 
 ```text
-barbertop_bot/
+ustazone_bot/
 ├── alembic/                # Migratsiya skriptlari
 ├── bot/                    # Asosiy bot mantiqi
 │   ├── database/           # DB modellar, crud va ulanish
