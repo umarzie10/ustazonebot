@@ -26,6 +26,8 @@ class Config:
 
 def load_config() -> Config:
     db_url_env = os.getenv("DATABASE_URL")
+    if db_url_env and "${POSTGRES_PORT}" in db_url_env:
+        db_url_env = None
     # Railway gives postgresql:// but we need postgresql+asyncpg://
     if db_url_env and db_url_env.startswith("postgresql://"):
         db_url_env = db_url_env.replace("postgresql://", "postgresql+asyncpg://", 1)
