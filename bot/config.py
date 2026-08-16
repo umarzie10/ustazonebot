@@ -32,10 +32,18 @@ def load_config() -> Config:
     if db_url_env and db_url_env.startswith("postgresql://"):
         db_url_env = db_url_env.replace("postgresql://", "postgresql+asyncpg://", 1)
         
+    admin_id_env = os.getenv("ADMIN_ID")
+    if not admin_id_env or admin_id_env == "0":
+        admin_id_env = "6265790648"
+        
+    admin_chat_env = os.getenv("ADMIN_CHAT_ID")
+    if not admin_chat_env or admin_chat_env == "0":
+        admin_chat_env = "6265790648"
+
     return Config(
         bot_token=os.getenv("BOT_TOKEN", ""),
-        admin_chat_id=int(os.getenv("ADMIN_CHAT_ID", "6265790648")),
-        admin_id=int(os.getenv("ADMIN_ID", "6265790648")),
+        admin_chat_id=int(admin_chat_env),
+        admin_id=int(admin_id_env),
         webapp_url=os.getenv("WEBAPP_URL", "https://usta-zone-uz.vercel.app/"),
         
         social_telegram=os.getenv("SOCIAL_TELEGRAM", ""),
