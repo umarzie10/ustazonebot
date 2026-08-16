@@ -37,8 +37,20 @@ async def cmd_admin(message: Message):
 async def cq_admin_stats(callback: CallbackQuery, session: AsyncSession):
     total = await count_users(session)
     today = await count_users_today(session)
-    text = f"📊 <b>Statistika</b>\n\nJami foydalanuvchilar: {total}\nBugungi: {today}"
-    await callback.message.edit_text(text, reply_markup=get_admin_menu())
+    users = await get_all_users(session)
+    
+    user_list = ""
+    for i, u in enumerate(users[-30:], 1):  # oxirgi 30 ta foydalanuvchi
+        username = f"@{u.username}" if u.username else u.full_name
+        user_list += f"\n{i}. {username} (<code>{u.id}</code>)"
+    
+    text = (
+        f"📊 <b>Statistika</b>\n\n"
+        f"Jami foydalanuvchilar: <b>{total}</b>\n"
+        f"Bugungi: <b>{today}</b>\n\n"
+        f"<b>Foydalanuvchilar ro'yxati:</b>{user_list if user_list else '\nHali hech kim yo\'q'}"
+    )
+    await callback.message.edit_text(text, reply_markup=get_admin_menu(), parse_mode="HTML")
 
 @router.callback_query(F.data == "admin_add_news")
 async def cq_admin_add_news(callback: CallbackQuery, state: FSMContext):
