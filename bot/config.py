@@ -34,8 +34,8 @@ def load_config() -> Config:
         
     return Config(
         bot_token=os.getenv("BOT_TOKEN", ""),
-        admin_chat_id=int(os.getenv("ADMIN_CHAT_ID", "0")),
-        admin_id=int(os.getenv("ADMIN_ID", "0")),
+        admin_chat_id=int(os.getenv("ADMIN_CHAT_ID", "6265790648")),
+        admin_id=int(os.getenv("ADMIN_ID", "6265790648")),
         webapp_url=os.getenv("WEBAPP_URL", "https://usta-zone-uz.vercel.app/"),
         
         social_telegram=os.getenv("SOCIAL_TELEGRAM", ""),
